@@ -1,0 +1,75 @@
+INFO:faiss.loader:Loading faiss with AVX512 support.
+INFO:faiss.loader:Successfully loaded faiss with AVX512 support.
+/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+Some weights of the model checkpoint at /root/.camel_tools/data/disambig_bert_unfactored/msa were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+INFO:__main__:Namespace(model_name_or_path='/scratch/mariam.saeed/side/advanced-nlp/models/aya-8bit', method='dragin', dataset='arabicaqa', data_path='/scratch/mariam.saeed/side/advanced-nlp/ArabicaQA', fewshot=6, sample=50, shuffle=False, generate_max_length=1024, query_formulation='real_words', retrieve_keep_top_k=35, output_dir='../result/aya-chat-arabicaqa-dragin-AraDPR', retriever='AraDPR', es_index_name='wiki_ar', retrieve_topk=3, hallucination_threshold=1.6, check_real_words=True, use_counter=True, config_path='../config/aya-expanse-quantized/ArabicaQA/AraDPR.json')
+INFO:__main__:output dir: ../result/aya-chat-arabicaqa-dragin-AraDPR/7
+INFO:data:Loading ArabicaQA from /scratch/mariam.saeed/side/advanced-nlp/ArabicaQA
+  0%|          | 0/12715 [00:00<?, ?it/s]100%|██████████| 12715/12715 [00:00<00:00, 2252040.68it/s]
+Map:   0%|          | 0/12715 [00:00<?, ? examples/s]Map:  24%|██▎       | 2993/12715 [00:00<00:00, 29823.51 examples/s]Map:  55%|█████▌    | 7000/12715 [00:00<00:00, 26948.02 examples/s]Map:  77%|███████▋  | 9802/12715 [00:00<00:00, 26966.98 examples/s]Map:  99%|█████████▊| 12532/12715 [00:00<00:00, 27031.67 examples/s]Map: 100%|██████████| 12715/12715 [00:00<00:00, 26788.22 examples/s]
+INFO:generate:Loading model from /scratch/mariam.saeed/side/advanced-nlp/models/aya-8bit
+Unused kwargs: ['_load_in_4bit', '_load_in_8bit', 'quant_method']. These kwargs are not used in <class 'transformers.utils.quantization_config.BitsAndBytesConfig'>.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.44s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.65s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.62s/it]
+INFO:__main__:start inference
+  0%|          | 0/50 [00:00<?, ?it/s]From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
+`torch.nn.functional.scaled_dot_product_attention` does not support `output_attentions=True`. Falling back to eager attention. This warning can be removed using the argument `attn_implementation="eager"` when loading the model.
+This is a friendly reminder - the current text generation call will exceed the model's predefined maximum length (8192). Depending on the model, you may observe exceptions, performance degradation, or nothing at all.
+  2%|▏         | 1/50 [02:11<1:47:15, 131.35s/it]  4%|▍         | 2/50 [02:30<52:25, 65.53s/it]     6%|▌         | 3/50 [03:41<53:05, 67.77s/it]  8%|▊         | 4/50 [04:37<48:26, 63.19s/it] 10%|█         | 5/50 [05:24<43:07, 57.49s/it] 12%|█▏        | 6/50 [05:44<32:41, 44.57s/it] 14%|█▍        | 7/50 [06:04<26:20, 36.76s/it] 16%|█▌        | 8/50 [06:23<21:42, 31.02s/it] 18%|█▊        | 9/50 [06:52<20:48, 30.44s/it] 20%|██        | 10/50 [06:58<15:08, 22.72s/it] 22%|██▏       | 11/50 [07:08<12:11, 18.75s/it] 24%|██▍       | 12/50 [07:35<13:31, 21.35s/it] 26%|██▌       | 13/50 [07:57<13:13, 21.46s/it] 28%|██▊       | 14/50 [08:15<12:19, 20.54s/it] 30%|███       | 15/50 [08:40<12:47, 21.93s/it] 32%|███▏      | 16/50 [09:38<18:29, 32.64s/it] 34%|███▍      | 17/50 [09:56<15:34, 28.32s/it] 36%|███▌      | 18/50 [11:34<26:18, 49.31s/it] 38%|███▊      | 19/50 [12:32<26:49, 51.93s/it] 38%|███▊      | 19/50 [12:51<20:58, 40.59s/it]
+Traceback (most recent call last):
+  File "/scratch/mariam.saeed/side/advanced-nlp/DRAGIN/src/main.py", line 126, in <module>
+    main()
+  File "/scratch/mariam.saeed/side/advanced-nlp/DRAGIN/src/main.py", line 100, in main
+    pred = model.inference(batch["question"], batch["demo"], batch["case"])
+  File "/scratch/mariam.saeed/side/advanced-nlp/DRAGIN/src/generate.py", line 722, in inference
+    new_text, tokens, attns, logprobs, entropies = self.generator.generate_attn(
+  File "/scratch/mariam.saeed/side/advanced-nlp/DRAGIN/src/generate.py", line 114, in generate_attn
+    outputs = self.model.generate(
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/transformers/generation/utils.py", line 2255, in generate
+    result = self._sample(
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/transformers/generation/utils.py", line 3257, in _sample
+    outputs = model_forward(**model_inputs, return_dict=True)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/transformers/models/cohere/modeling_cohere.py", line 862, in forward
+    outputs = self.model(
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/transformers/models/cohere/modeling_cohere.py", line 618, in forward
+    layer_outputs = decoder_layer(
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/transformers/models/cohere/modeling_cohere.py", line 362, in forward
+    hidden_states_attention, self_attn_weights = self.self_attn(
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/transformers/models/cohere/modeling_cohere.py", line 272, in forward
+    query_states = self.q_proj(hidden_states).view(hidden_shape)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/bitsandbytes/nn/modules.py", line 990, in forward
+    out = bnb.matmul(x, self.weight, bias=self.bias, state=self.state)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py", line 509, in matmul
+    return MatMul8bitLt.apply(A, B, out, bias, state)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py", line 368, in forward
+    out32 = F.int8_linear_matmul(CA, state.CB)
+  File "/root/miniconda3/envs/dragin/lib/python3.10/site-packages/bitsandbytes/functional.py", line 2341, in int8_linear_matmul
+    out = torch.empty(shapeC, device=A.device, dtype=dtype)
+KeyboardInterrupt

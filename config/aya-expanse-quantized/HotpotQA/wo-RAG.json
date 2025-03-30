@@ -1,0 +1,14 @@
+{
+    "model_name_or_path": "/content/drive/MyDrive/Advanced_NLP/models/aya-8bit",
+    "method": "non-retrieval",
+    "dataset": "hotpotqa",
+    "data_path": "/content/drive/MyDrive/Advanced_NLP/DRAGIN/data/hotpotqa",
+    "fewshot": 0,
+    "sample": 1,
+    "shuffle": false,
+    "generate_max_length": 100,
+    "query_formulation": "direct",
+    "output_dir": "../result/test",
+    "es_index_name": "wiki",
+    "use_counter": true
+}

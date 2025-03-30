@@ -1,0 +1,14 @@
+{
+    "model_name_or_path": "/content/drive/MyDrive/Advanced_NLP/models/aya-8bit",
+    "method": "non-retrieval",
+    "dataset": "arabicaqa",
+    "data_path": "/content/drive/MyDrive/Advanced_NLP/data",
+    "fewshot": 0,
+    "sample": 13000,
+    "shuffle": false,
+    "generate_max_length": 1024,
+    "query_formulation": "direct",
+    "output_dir": "../result/aya-chat-arabicaqa-5samples",
+    "es_index_name": "wiki",
+    "use_counter": true
+}

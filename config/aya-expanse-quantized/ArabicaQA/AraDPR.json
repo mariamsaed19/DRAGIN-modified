@@ -1,0 +1,19 @@
+{
+    "model_name_or_path": "/scratch/mariam.saeed/side/advanced-nlp/models/aya-8bit",
+    "method": "dragin",
+    "dataset": "arabicaqa",
+    "data_path": "/scratch/mariam.saeed/side/advanced-nlp/ArabicaQA",
+    "fewshot": 0,
+    "sample": 13000,
+    "shuffle": false,
+    "generate_max_length": 1024,
+    "query_formulation": "real_words",
+    "retrieve_keep_top_k": 35,
+    "output_dir": "../result/aya-chat-arabicaqa-dragin-AraDPR",
+    "retriever": "AraDPR",
+    "es_index_name": "wiki_ar",
+    "retrieve_topk": 3,
+    "hallucination_threshold": 0.3,
+    "check_real_words": true,
+    "use_counter": true
+}
